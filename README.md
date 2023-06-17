@@ -24,7 +24,16 @@ cd gpt-search-flights
 ```
 
 ## 🎮 Usage
-Ready for takeoff? 🛫 To start the server, run:
+Before we're ready for takeoff, there's a tiny bit of prep work to do. 🛫
+
+Firstly, you'll need to make a copy of the `.example.env` file and rename it to `.env`. This is where you'll store your `OPENAI_API_KEY`.
+```bash
+cp .example.env .env
+```
+Then, open the .env file and replace YOUR_OPENAI_API_KEY with your actual OpenAI API key.
+
+Once you've done that, you're ready to start the server! You can do this by running:
+
 ```bash
 deno run --allow-net --allow-env --allow-read index.ts
 ```
@@ -34,9 +43,9 @@ npm run dev
 ```
 
 ## ✨ Features
-. Discover flight ticket details based on things like your starting airport, where you're heading, and when you're planning to travel. 🌍
-. Experience the magic of integration with the OpenAI API to generate text that's just like chatting with a human. 🗣
-. Provides a fun, experimental sandbox to play around with OpenAI's new function feature. 🏖
+- Discover flight ticket details based on things like your starting airport, where you're heading, and when you're planning to travel. 🌍
+- Experience the magic of integration with the OpenAI API to generate text that's just like chatting with a human. 🗣
+- Provides a fun, experimental sandbox to play around with OpenAI's new function feature. 🏖
 
 
 ## 📜 License
