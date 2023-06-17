@@ -1,41 +1,44 @@
-# Flight-GPT: A Puppet Project Experimenting with OpenAI's Function Feature
+# 🛫 Flight-GPT: A Fun Puppet Project Playing with OpenAI's Cool Function Feature 🤖
 
-## Overview
+## 🌐 Overview
 
-Flight-GPT is an experimental Deno-based project that explores OpenAI's new function feature. It simulates a flight ticket booking system, serving as a platform for understanding the capabilities of OpenAI API. The API is built on the Hono framework.
+Flight-GPT is a fun, experimental project built on Deno 🦕 that dives into the exciting world of OpenAI's new function feature. Think of it as your very own flight ticket booking simulator, perfect for getting to grips with what the OpenAI API can do. It's all neatly packaged into the Hono framework. 🎁
 
-## Getting Started
+## 🚀 Getting Started
 
-### Prerequisites
+### 🔧 Prerequisites
 
-To run this project, you need to have [Deno](https://deno.land/) installed on your system.
+Before we take off, make sure you have [Deno](https://deno.land/) installed on your system. This is your passport to our project! 🛂
 
-### Installation
+### 📦 Installation
 
-1. Clone the repo
+1. First, let's get our hands on the project. Use your favorite terminal and clone the repo:
 ```bash
-git clone https://github.com/<username>/flight-gpt.git
-cd flight-gpt
+git clone https://github.com/HMarzban/gpt-search-flights.git
+cd gpt-search-flights
 ```
-2.Install the required dependencies
+2. Next, let's make sure we have all the stuff we need. In this case, we're traveling light thanks to Deno:
+
 ```bash
-# This project uses Deno, no separate installation command is required
+# This project uses Deno, so no need for extra baggage 🧳!
 ```
-## Usage
-To start the server, run:
+
+## 🎮 Usage
+Ready for takeoff? 🛫 To start the server, run:
 ```bash
 deno run --allow-net --allow-env --allow-read index.ts
 ```
-Or you can use the provided npm script:
+Or if you prefer, you can use the friendly npm script we've provided:
 ```bash
 npm run dev
 ```
 
-# Features
-- Fetch flight ticket details based on parameters like origin airport, destination airport, and dates.
-- Integration with OpenAI API to generate human-like text.
-- Provides an experimental platform to explore OpenAI's new function feature.
+## ✨ Features
+. Discover flight ticket details based on things like your starting airport, where you're heading, and when you're planning to travel. 🌍
+. Experience the magic of integration with the OpenAI API to generate text that's just like chatting with a human. 🗣
+. Provides a fun, experimental sandbox to play around with OpenAI's new function feature. 🏖
 
-# License
-This project is MIT licensed. See the LICENSE file for details.
+
+## 📜 License
+This project is under the MIT license. For the full legal stuff, check out the LICENSE file. 🕵️‍♂️
 
