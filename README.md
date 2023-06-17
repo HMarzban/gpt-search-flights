@@ -1,7 +1,8 @@
 # 🛫 Flight-GPT: A Fun Puppet Project Playing with OpenAI's Cool Function Feature 🤖
 
-Flight-GPT is a fun, experimental project built on Deno 🦕 that dives into the exciting world of OpenAI's new function feature. Think of it as your very own flight ticket booking simulator, perfect for getting to grips with what the OpenAI API can do. It's all neatly packaged into the Hono framework. 🎁
+Flight-GPT is a fun, experimental project built on Deno 🦕 that dives into the exciting world of OpenAI's new function feature, [Read More](https://openai.com/blog/function-calling-and-other-api-updates). Think of it as your very own flight ticket booking simulator, perfect for getting to grips with what the OpenAI API can do. It's all neatly packaged into the Hono framework. 🎁
 
+In order to have flight API I used [trip.ir](https://www.trip.ir/), I hope they are not get mad at me 😅.
 ## 🚀 Getting Started
 
 ### 🔧 Prerequisites
