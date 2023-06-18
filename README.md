@@ -61,6 +61,43 @@ Or if you prefer, you can use the friendly npm script we've provided:
 npm run dev
 ```
 
+## 🏗 Building the Project
+
+If you don't fancy running the project directly with Deno, you can also compile
+the project to an executable. Based on your operating system, you can use one of
+the following commands:
+
+```bash
+# For Windows
+npm run build:windows
+
+# For Linux
+npm run build:linux
+
+# For Apple (ARM architecture)
+npm run build:apple:arm
+
+# For Apple (Intel architecture)
+npm run build:apple:intel
+```
+
+Or you can build for all platforms at once with:
+
+```bash
+npm run build
+```
+
+This will create an executable in the ./build directory. You can run the
+executable file instead of using Deno. Remember to replace app_<platform> with
+the name of the executable for your platform:
+
+```bash
+./build/app_<platform>
+```
+
+Please note that you still need to set up your .env file before running the
+executable.
+
 ## 🎯 Testing the API
 
 Ready to see Flight-GPT in action? You can use tools like Postman or `curl` to
