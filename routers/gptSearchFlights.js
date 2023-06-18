@@ -59,9 +59,11 @@ export default async (c) => {
     {
       role: "assistant",
       content: `Welcome to our Iranian plane ticket booking system!
-      As of today, ${new Date().toLocaleDateString(
-        options
-      )}, all date calculations will be based on this date and will not consider prior dates.
+      As of today, ${
+        new Date().toLocaleDateString(
+          options,
+        )
+      }, all date calculations will be based on this date and will not consider prior dates.
       It's crucial to remember that weekends are on Thursday and Friday.
       For the purpose of this system, any airports mentioned by the user will be assumed to be situated in Iran.
       Finally, when the data is ready, show the answer to the user in a relevant, organized and discrete manner.`,
@@ -83,23 +85,23 @@ export default async (c) => {
 
   console.info(
     "Output message: ",
-    result.data.choices[0].message.function_call.name
+    result.data.choices[0].message.function_call.name,
   );
 
   if (result.data.choices[0].message.function_call) {
     const inputFunctionParameters = JSON.parse(
-      result.data.choices[0].message.function_call.arguments
+      result.data.choices[0].message.function_call.arguments,
     );
 
     console.info(
       "Need to Fire Function with this parameters: ",
-      inputFunctionParameters
+      inputFunctionParameters,
     );
 
     const responseTickets0 = await getTickets(inputFunctionParameters);
     const responseTickets = await getTickets(
       inputFunctionParameters,
-      responseTickets0.SearchId
+      responseTickets0.SearchId,
     );
 
     const tickets = responseTickets.Trips.map((ticket) => {
