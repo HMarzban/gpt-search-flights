@@ -5,6 +5,11 @@
   "author": "Hossein Marzban",
   "license": "MIT",
   "scripts": {
-    "dev": "deno run --allow-net --allow-env --allow-read --watch index.ts"
+    "dev": "deno run --allow-net --allow-env --allow-read --watch index.js",
+    "build:windwos": "deno compile -A -o ./build/app_windows --target x86_64-pc-windows-msvc index.js",
+    "build:linux": "deno compile -A -o ./build/app_linux --target x86_64-unknown-linux-gnu index.js",
+    "build:apple:arm": "deno compile -A -o ./build/app_apple_arm --target aarch64-apple-darwin index.js",
+    "build:apple:intel": "deno compile -A -o ./build/app_apple_intel --target x86_64-apple-darwin index.js",
+    "build": "npm run build:windwos && npm run build:linux && npm run build:apple:arm && npm run build:apple:intel"
   }
 }
