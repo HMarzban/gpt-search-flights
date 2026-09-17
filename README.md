@@ -1,4 +1,23 @@
-# 🛫 Flight-GPT: A Fun Puppet Project Playing with OpenAI's Cool Function Feature 🤖
+# Flight-GPT — a 2023 function-calling experiment
+
+This repository preserves an early Deno/Hono experiment connecting model function
+calls to a flight search API. It searches listings; it cannot book tickets. The
+pinned OpenAI SDK 3.2.1, model `gpt-3.5-turbo-0613`, Deno imports and trip.ir
+integration are historical. Live provider compatibility has not been revalidated,
+so the original quickstart below is for reproducing that integration, not a
+guarantee that the historical model/provider endpoints remain available.
+
+## Offline verification
+
+With Node.js 22+, run `npm test`. The fixtures need no API key, network, npm install,
+or paid model calls. They cover ordinary responses without function calls, invalid
+arguments, empty and one-way results, and model/provider errors. The HTTP route
+returns 400 for invalid input and 502 for upstream failures. Model output is served
+as text, not interpreted as HTML.
+
+`GET /tickets` remains a historical hardcoded June 2023 example. Use
+`POST /gpt/search-flights` for the function-calling flow.
+
 
 Flight-GPT is a fun, experimental project built on Deno 🦕 that dives into the
 exciting world of OpenAI's new function feature,
@@ -52,7 +71,7 @@ Once you've done that, you're ready to start the server! You can do this by
 running:
 
 ```bash
-deno run --allow-net --allow-env --allow-read index.ts
+deno run --allow-net --allow-env --allow-read index.js
 ```
 
 Or if you prefer, you can use the friendly npm script we've provided:
@@ -116,7 +135,7 @@ If you're a curl fan, you can run a command similar to the following in your
 terminal:
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"content": "flight ticket from tehran to mashhad airport for 23 and return 26 of this month"}' http://localhost:<your_port>/gpt/search-flights
+curl -X POST -H "Content-Type: application/json" -d '{"content": "flight ticket from tehran to mashhad airport for 23 and return 26 of this month"}' http://localhost:8000/gpt/search-flights
 ```
 
 Remember, content can be in any language, but dates and day numbers should be
@@ -205,5 +224,5 @@ So go ahead and start exploring the world of flight options with Flight-GPT!
 
 ## 📜 License
 
-This project is under the MIT license. For the full legal stuff, check out the
-LICENSE file. 🕵️‍♂️
+`package.json` declares MIT. A standalone license file was not included in the
+original repository; this maintenance pass does not add or change licensing terms.

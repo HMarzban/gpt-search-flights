@@ -5,10 +5,6 @@ const TRIP_IR_API = "https://gateway.trip.ir/api/LowFareSearch";
 const getTickets = async (InputFunc, SearchId = null) => {
   const searchURL = TRIP_IR_API + (SearchId ? `?searchId=${SearchId}` : "");
 
-  let OneWay = true;
-  if (InputFunc.StrArriveDateTime && SearchId) {
-    OneWay = false;
-  }
   let data = JSON.stringify({
     OriginInformations: [
       {
@@ -23,7 +19,7 @@ const getTickets = async (InputFunc, SearchId = null) => {
     NoOfInfants: "0",
     NearByAirport: false,
     IsInternal: "true",
-    OneWay: OneWay,
+    OneWay: InputFunc.OneWay,
     VendorExcludeCodes: [],
     VendorPreferenceCodes: [],
     CabinClassType: "100",
@@ -32,6 +28,7 @@ const getTickets = async (InputFunc, SearchId = null) => {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
+    timeout: 15000,
     url: searchURL,
     headers: {
       "Content-Type": "application/json",
@@ -39,11 +36,7 @@ const getTickets = async (InputFunc, SearchId = null) => {
     data: data,
   };
 
-  const responseTickets = await axios.request(config).catch((error) => {
-    console.error(error.message);
-  });
-
-  console.info(`searchURL: ${searchURL}, Total: ${responseTickets.data.Total}`);
+  const responseTickets = await axios.request(config);
 
   return responseTickets.data;
 };
