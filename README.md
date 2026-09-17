@@ -224,5 +224,4 @@ So go ahead and start exploring the world of flight options with Flight-GPT!
 
 ## 📜 License
 
-`package.json` declares MIT. A standalone license file was not included in the
-original repository; this maintenance pass does not add or change licensing terms.
+Licensed under the [MIT License](LICENSE).
